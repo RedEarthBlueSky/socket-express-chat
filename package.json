@@ -1,0 +1,19 @@
+{
+  "name": "socket-express-chat",
+  "version": "1.0.0",
+  "description": "Very basic socket.io and express app ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedEarthBlueSky/socket-express-chat.git"
+  },
+  "author": "Ian Salt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedEarthBlueSky/socket-express-chat/issues"
+  },
+  "homepage": "https://github.com/RedEarthBlueSky/socket-express-chat#readme"
+}
