@@ -6,7 +6,7 @@ const http = require('http').Server(app);  // http server
 //  initialize a new instance of socket.io by passing the http - server object
 const io = require('socket.io')(http);
 
-// refactor route handler to use sendFile:
+// refactor route handler to use sendFile :
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 })
@@ -19,10 +19,18 @@ io.on('connection', function(socket){
   console.log('User connected');
   socket.on('disconnect', function () {
     console.log('User disconnected');
+  });
+});
+
+io.on('connection', function (socket) {
+  socket.on('chat message', function (msg) {
+    console.log('message *: ' + msg);
+    //  send the message to everybody including the sender
+    io.emit('chat message', msg);
   })
 });
 
 //  make the http server listen on port 3000
 http.listen(3000, function () {
   console.log('listening on *:3000');
-})
+});
